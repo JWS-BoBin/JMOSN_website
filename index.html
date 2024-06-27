@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliette's Miracle on St. Nick</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&family=Bree+Serif&display=swap" rel="stylesheet">
+
+    <script>
+        function loadPartial(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                loadPartial('header.html', 'header-partial');
+                loadPartial('footer.html', 'footer-partial');
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            background-color: #000;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lobster', cursive;
+            color: #FFD700; /* Gold, keeping headers gold for contrast */
+        }
+
+        .navbar {
+            background-color: #111; /* Slightly lighter than the body for subtle contrast */
+        }
+
+        #tagline {
+            font-family: 'Bree Serif', serif;
+            font-size: 1.5rem;
+            text-align: center;
+            color: #FFD700; /* Keeping gold for visibility */
+            margin: 2rem 0;
+        }
+
+        /* Adjust link colors for better visibility on dark background */
+        a {
+            color: #FFD700; /* Gold */
+        }
+
+        a:hover {
+            color: #FFA500; /* Orange, for hover effect */
+        }
+
+        /* Adjust the footer colors */
+        footer {
+            background-color: #111; /* Slightly lighter than the body */
+        }
+
+        footer a {
+            color: #FFD700 !important; /* Gold, important to override Bootstrap styles */
+        }
+
+        footer a:hover {
+            color: #FFA500 !important; /* Orange, for hover effect */
+        }
+        .navbar-brand, .nav-link {
+            color: #FFD700 !important; /* Gold */
+        }
+        .btn-primary {
+            background-color: #224bb2; /* Blue */
+            border-color: #224bb2;
+        }
+        .btn-primary:hover {
+            background-color: #405996;
+            border-color: #405996;
+        }
+        #hero {
+            background-image: url('images/JMOSN_homepage.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding-bottom: 2rem;
+        }
+
+        #hero .container {
+            transform: translateY(-100px); /* Adjust the value as needed */
+        }
+
+        #hero h1 {
+            font-size: 2.5rem; /* Base size for mobile */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        #hero p {
+            font-size: 1.5rem; /* Base size for mobile */
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            #hero p {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #hero p {
+                font-size: 2rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #hero p {
+                font-size: 2.5rem;
+            }
+        }
+
+        #tagline {
+            font-family: 'Bree Serif', serif;
+            font-size: 1.5rem;
+            text-align: center;
+            color: #ffffff; /* White */
+            margin: 2rem 0;
+        }
+        @media (min-width: 768px) {
+            #hero h1 {
+                font-size: 4rem;
+            }
+        }
+        @media (min-width: 992px) {
+            #hero h1 {
+                font-size: 5rem;
+            }
+        }
+        @media (min-width: 1200px) {
+            #hero h1 {
+                font-size: 6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Juliette's Miracle on St. Nick</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cast-crew">Cast & Crew</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pitch-deck.html">Pitch Deck</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Juliette's Miracle on St. Nick</h1>
+            <p><strong>Coming Soon</strong></p>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <p id="tagline">A poignant exploration of love, legacy, and the fleeting nature of life</p>
+
+        <section id="about" class="mb-5">
+            <h2>About the Film</h2>
+            <p>In "Juliette's Miracle on St. Nick," we embark on a journey with Juliette, an elderly woman facing the twilight of her life in a Harlem hospital. Struggling with the inevitability of her mortality, Juliette receives an unexpected visit from Mr. Cat, a mystical feline figure, who offers her a chance to relive one enchanted night of her youth.</p>
+            <p>Transported back to the vibrant jazz era of Harlem, Juliette rediscovers the joy of dance and reconnects with her cherished memories. With Mr. Cat as her guide, she navigates through the bustling streets and finds herself at her beloved garden, where she encounters Mudear, a wise elder who shares in Juliette's reflections on life and family.</p>
+        </section>
+
+        <section id="cast-crew" class="mb-5">
+            <h2>Cast & Crew</h2>
+            <p>Information about the cast and crew will be available soon.</p>
+        </section>
+
+        <section id="pitch-deck" class="mb-5">
+            <h2>Pitch Deck</h2>
+            <p>To learn more about the project, please visit our Pitch Deck page.</p>
+            <a href="pitch-deck.html" class="btn btn-primary">View Pitch Deck</a>
+        </section>
+
+        <section id="contact" class="mb-5">
+            <h2>Contact Us</h2>
+            <p>For inquiries, please contact us at: <a href="mailto:antwand.pearman@happymercs.com">antwand.pearman@happymercs.com</a></p>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Juliette's Miracle on St. Nick. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light me-3">Privacy Policy</a>
+                    <a href="#" class="text-light">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
