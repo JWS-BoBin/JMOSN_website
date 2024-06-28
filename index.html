@@ -27,7 +27,7 @@
             font-family: 'Montserrat', sans-serif;
             color: #000; /* Changed to black */
             background: rgb(255,219,73);
-            background: radial-gradient(circle, rgba(255,219,73,1) 15%, rgba(254,209,47,1) 50%, rgba(255,197,1,1) 75%);
+            background: radial-gradient(circle, #ffdb49 15%, #fed12f 50%, #ffc501 75%);
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -80,14 +80,14 @@
         }
         
         .btn-primary {
-            background-color: #224bb2; /* Blue */
-            border-color: #224bb2;
+            background-color: #00195a; /* Blue */
+            border-color: #00195a;
             color: #fff; /* White text for contrast */
         }
 
         .btn-primary:hover {
-            background-color: #405996;
-            border-color: #405996;
+            background-color: #2a395e;
+            border-color: #2a395e;
         }
 
         #hero {
@@ -110,12 +110,14 @@
         #hero h1 {
             font-size: 2.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #fed12f; /* Changed to yellow */
         }
 
         #hero p {
             font-size: 1.5rem;
             font-weight: bold;
             margin-top: 1rem;
+            color: #fff; /* Explicitly set to white to ensure it doesn't inherit the yellow color */
         }
 
         @media (min-width: 768px) {
@@ -123,7 +125,7 @@
                 font-size: 1.5rem;
             }
             #hero h1 {
-                font-size: 4rem;
+                font-size: 6rem;
             }
         }
 
@@ -132,7 +134,7 @@
                 font-size: 2rem;
             }
             #hero h1 {
-                font-size: 5rem;
+                font-size: 8rem;
             }
         }
 
@@ -141,7 +143,7 @@
                 font-size: 2.5rem;
             }
             #hero h1 {
-                font-size: 6rem;
+                font-size: 10rem;
             }
         }
     </style>
