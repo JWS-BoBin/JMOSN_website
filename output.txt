@@ -1,0 +1,111 @@
+Folder PATH listing for volume OS
+Volume serial number is 66A8-8822
+C:.
+|   #footer.html
+|   #header.html
+|   CNAME
+|   Copy of Juliette's Miracle on St. Nick  (1).pdf
+|   events.html
+|   gallery.html
+|   git-vscode-diagnostic.sh
+|   index.html
+|   output.txt
+|   pitch-deck.html
+|   privacy-policy.html
+|   terms-of-use.html
+|   
++---components
+|       footer.html
+|       navbar.html
+|       
++---images
+|   |   actors_pw.jpg
+|   |   actors_pw_attribution.txt
+|   |   JMOSN_homepage.jpg
+|   |   NewSwingCity_WorldMap.webp
+|   |   PitchDeck.pdf
+|   |   rename.py
+|   |   
+|   \---gallery
+|       +---JMOSN-Art
+|       |       Illustration10.png
+|       |       Illustration11.png
+|       |       Illustration12.png
+|       |       Illustration13.png
+|       |       Illustration14.png
+|       |       Illustration15.png
+|       |       Illustration16.png
+|       |       Illustration17.png
+|       |       Strolls of New york-jsonata (film)_4.mp3
+|       |       
+|       \---JMOSN-HAT
+|           +---Cat
+|           |       .DS_Store
+|           |       Cat_001.jpeg
+|           |       Cat_002.jpeg
+|           |       Cat_003.jpeg
+|           |       Cat_004.jpeg
+|           |       Cat_005.jpeg
+|           |       Cat_006.jpeg
+|           |       Cat_007.jpeg
+|           |       Cat_008.jpeg
+|           |       Cat_009.jpeg
+|           |       Cat_010.jpeg
+|           |       Cat_011.jpeg
+|           |       Cat_012.jpeg
+|           |       Cat_013.jpeg
+|           |       Cat_014.jpeg
+|           |       Cat_015.jpeg
+|           |       Cat_016.jpeg
+|           |       Cat_017.jpeg
+|           |       Cat_018.jpeg
+|           |       Cat_019.jpeg
+|           |       
+|           +---Crow
+|           |       .DS_Store
+|           |       Cro_001.jpeg
+|           |       Cro_002.jpeg
+|           |       Cro_003.jpeg
+|           |       Cro_004.jpeg
+|           |       Cro_005.jpeg
+|           |       Cro_006.jpeg
+|           |       Cro_007.jpeg
+|           |       Cro_008.jpeg
+|           |       Cro_009.jpeg
+|           |       Cro_010.jpeg
+|           |       Cro_011.jpeg
+|           |       Cro_012.jpeg
+|           |       
+|           +---Juliette
+|           |       .DS_Store
+|           |       Jul_001.png
+|           |       Jul_002.jpeg
+|           |       Jul_003.jpeg
+|           |       Jul_004.jpeg
+|           |       Jul_005.jpeg
+|           |       Jul_006.jpeg
+|           |       Jul_007.jpeg
+|           |       Jul_008.jpeg
+|           |       Jul_009.jpeg
+|           |       Jul_010.jpeg
+|           |       Jul_011.jpeg
+|           |       Jul_012.jpeg
+|           |       Jul_013.jpeg
+|           |       Jul_014.jpeg
+|           |       Jul_015.jpeg
+|           |       Jul_016.jpeg
+|           |       Jul_017.png
+|           |       Jul_018.png
+|           |       
+|           \---Mudear
+|                   .DS_Store
+|                   Mud_001.jpeg
+|                   Mud_002.jpeg
+|                   Mud_003.jpeg
+|                   Mud_004.jpeg
+|                   Mud_005.jpeg
+|                   Mud_006.jpeg
+|                   
+\---js
+        load-components.js
+        

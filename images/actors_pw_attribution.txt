@@ -1,0 +1,5 @@
+Text link:
+<span class="text-link" ><span ><a target="_blank" href="https://pikwizard.com/photo/actors-rehearsing-script-under-stage-lights/001b3d8943b12e0e63403efb4f861219/">PikWizard</a></span ></span >
+
+Image link: 
+<span class="image-link"> <span style=" margin: 0 0 20px 0; display: inline-block; vertical-align: middle; " > <a target="_blank" href="https://pikwizard.com/photo/actors-rehearsing-script-under-stage-lights/001b3d8943b12e0e63403efb4f861219/" style="text-decoration: none; font-size: 10px; margin: 0" > <img src="/pw/medium/001b3d8943b12e0e63403efb4f861219.jpg" style="margin: 0; width: 100%" alt="" /> <p style="font-size: 12px; margin: 0">PikWizard</p> </a> </span> </span >

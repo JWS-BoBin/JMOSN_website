@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Juliette's Miracle on St. Nick</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&family=Bree+Serif&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bree+Serif&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+
+    <style>
+        /* Font loading optimization */
+        @font-face {
+            font-family: 'Lobster';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lobster/v28/neILzCirqoswsqX9zoKmM4MwWJU.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ensure text remains visible during webfont load */
+        .webfont-loaded h1, .webfont-loaded h2, .webfont-loaded h3, .webfont-loaded h4, .webfont-loaded h5, .webfont-loaded h6 {
+            font-family: 'Lobster', cursive;
+        }
+
+        body {
+        font-family: 'Montserrat', sans-serif;
+        color: #000;
+        background: rgb(255,219,73);
+        background: radial-gradient(circle, #ffdb49 15%, #fed12f 50%, #ffc501 75%);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lobster', cursive;
+            color: #000;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-section {
+            margin-bottom: 3rem;
+        }
+
+        /* Updated gallery item styles */
+        .gallery-item {
+            margin-bottom: 1rem;
+            height: 200px; /* Set a fixed height for all gallery items */
+        }
+
+        .gallery-item a {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* This will ensure the entire image is visible */
+            object-position: center; /* Center the image within its container */
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Existing footer styles */
+        footer {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: #000 !important;
+        }
+
+        footer a:hover {
+            color: #333 !important;
+        }
+    
+        .lb-outerContainer {
+        transition: width 0.3s ease-in-out, height 0.1s ease-in-out !important;
+        }
+
+        .lb-image {
+            transition: width 0.1s ease-in-out, height 0.3s ease-in-out !important;
+        }
+
+        .lb-dataContainer {
+            transition: width 0.1s ease-in-out !important;
+        }
+    </style>
+
+    <script>
+        // Add this script after including the Lightbox2 library
+        lightbox.option({
+            'resizeDuration': 100
+        });
+    </script>
+    <script>
+        // Add a class to the body when the webfont is loaded
+        WebFont.load({
+            google: {
+                families: ['Lobster']
+            },
+            active: function() {
+                document.body.classList.add('webfont-loaded');
+            }
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+</head>
+
+<body>
+    <!-- Navbar (you can include this from your components/navbar.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Juliette's Miracle on St. Nick</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#cast-crew">Cast & Crew</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pitch-deck.html">Pitch Deck</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="text-center mb-5">Gallery</h1>
+    
+        <!-- Story Board Gallery Section -->
+        <section class="gallery-section">
+            <h2 class="mb-4">Story Board Art</h2>
+            <div class="row">
+                <!-- JMOSN-Art images remain unchanged -->
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-Art/Illustration10.png" data-lightbox="jmosn-art" data-title="JMOSN Art - Illustration 10">
+                        <img src="images/gallery/JMOSN-Art/Illustration10.png" alt="JMOSN Art - Illustration 10" class="img-fluid" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-Art/Illustration11.png" data-lightbox="jmosn-art" data-title="JMOSN Art - Illustration 11">
+                        <img src="images/gallery/JMOSN-Art/Illustration11.png" alt="JMOSN Art - Illustration 10" class="img-fluid" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-Art/Illustration12.png" data-lightbox="jmosn-art" data-title="JMOSN Art - Illustration 12">
+                        <img src="images/gallery/JMOSN-Art/Illustration12.png" alt="JMOSN Art - Illustration 12" class="img-fluid" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-Art/Illustration13.png" data-lightbox="jmosn-art" data-title="JMOSN Art - Illustration 13">
+                        <img src="images/gallery/JMOSN-Art/Illustration13.png" alt="JMOSN Art - Illustration 13" class="img-fluid" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-Art/Illustration14.png" data-lightbox="jmosn-art" data-title="JMOSN Art - Illustration 14">
+                        <img src="images/gallery/JMOSN-Art/Illustration14.png" alt="JMOSN Art - Illustration 14" class="img-fluid" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-Art/Illustration15.png" data-lightbox="jmosn-art" data-title="JMOSN Art - Illustration 15">
+                        <img src="images/gallery/JMOSN-Art/Illustration15.png" alt="JMOSN Art - Illustration 15" class="img-fluid" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-Art/Illustration16.png" data-lightbox="jmosn-art" data-title="JMOSN Art - Illustration 16">
+                        <img src="images/gallery/JMOSN-Art/Illustration16.png" alt="JMOSN Art - Illustration 16" class="img-fluid" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-Art/Illustration17.png" data-lightbox="jmosn-art" data-title="JMOSN Art - Illustration 17">
+                        <img src="images/gallery/JMOSN-Art/Illustration17.png" alt="JMOSN Art - Illustration 17" class="img-fluid" height="300">
+                    </a>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Mudear Gallery Section -->
+        <section class="gallery-section">
+            <h2 class="mb-4">Mudear Concept Art & Inspiration</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Mudear/Mud_001.jpeg" data-lightbox="mudear" data-title="Mudear 1">
+                        <img src="images/gallery/JMOSN-HAT/Mudear/Mud_001.jpeg" alt="Mudear 1" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Mudear/Mud_002.jpeg" data-lightbox="mudear" data-title="Mudear 2">
+                        <img src="images/gallery/JMOSN-HAT/Mudear/Mud_002.jpeg" alt="Mudear 2" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Mudear/Mud_003.jpeg" data-lightbox="mudear" data-title="Mudear 3">
+                        <img src="images/gallery/JMOSN-HAT/Mudear/Mud_003.jpeg" alt="Mudear 3" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Mudear/Mud_004.jpeg" data-lightbox="mudear" data-title="Mudear 4">
+                        <img src="images/gallery/JMOSN-HAT/Mudear/Mud_004.jpeg" alt="Mudear 4" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Mudear/Mud_005.jpeg" data-lightbox="mudear" data-title="Mudear 5">
+                        <img src="images/gallery/JMOSN-HAT/Mudear/Mud_005.jpeg" alt="Mudear 5" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Mudear/Mud_006.jpeg" data-lightbox="mudear" data-title="Mudear 6">
+                        <img src="images/gallery/JMOSN-HAT/Mudear/Mud_006.jpeg" alt="Mudear 6" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Juliette Gallery Section -->
+        <section class="gallery-section">
+            <h2 class="mb-4">Juliette Concept Art</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_001.png" data-lightbox="juliette" data-title="Juliette 1">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_001.png" alt="Juliette 1" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_002.jpeg" data-lightbox="juliette" data-title="Juliette 2">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_002.jpeg" alt="Juliette 2" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_003.jpeg" data-lightbox="juliette" data-title="Juliette 3">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_003.jpeg" alt="Juliette 3" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_004.jpeg" data-lightbox="juliette" data-title="Juliette 4">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_004.jpeg" alt="Juliette 4" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_005.jpeg" data-lightbox="juliette" data-title="Juliette 5">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_005.jpeg" alt="Juliette 5" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_006.jpeg" data-lightbox="juliette" data-title="Juliette 6">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_006.jpeg" alt="Juliette 6" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_007.jpeg" data-lightbox="juliette" data-title="Juliette 7">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_007.jpeg" alt="Juliette 7" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_008.jpeg" data-lightbox="juliette" data-title="Juliette 8">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_008.jpeg" alt="Juliette 8" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_009.jpeg" data-lightbox="juliette" data-title="Juliette 9">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_009.jpeg" alt="Juliette 9" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_010.jpeg" data-lightbox="juliette" data-title="Juliette 10">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_010.jpeg" alt="Juliette 10" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_011.jpeg" data-lightbox="juliette" data-title="Juliette 11">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_011.jpeg" alt="Juliette 11" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_012.jpeg" data-lightbox="juliette" data-title="Juliette 12">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_012.jpeg" alt="Juliette 12" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_013.jpeg" data-lightbox="juliette" data-title="Juliette 13">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_013.jpeg" alt="Juliette 13" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_014.jpeg" data-lightbox="juliette" data-title="Juliette 14">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_014.jpeg" alt="Juliette 14" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_015.jpeg" data-lightbox="juliette" data-title="Juliette 15">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_015.jpeg" alt="Juliette 15" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_016.jpeg" data-lightbox="juliette" data-title="Juliette 16">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_016.jpeg" alt="Juliette 16" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_017.png" data-lightbox="juliette" data-title="Juliette 17">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_017.png" alt="Juliette 17" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Juliette/Jul_018.png" data-lightbox="juliette" data-title="Juliette 18">
+                        <img src="images/gallery/JMOSN-HAT/Juliette/Jul_018.png" alt="Juliette 18" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Mr. Cat Gallery Section -->
+        <section class="gallery-section">
+            <h2 class="mb-4">Mr. Cat Concept Art</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_001.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 1">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_001.jpeg" alt="Mr. Cat 1" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_002.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 2">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_002.jpeg" alt="Mr. Cat 2" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_003.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 3">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_003.jpeg" alt="Mr. Cat 3" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_004.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 4">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_004.jpeg" alt="Mr. Cat 4" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_005.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 5">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_005.jpeg" alt="Mr. Cat 5" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_006.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 6">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_006.jpeg" alt="Mr. Cat 6" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_007.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 7">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_007.jpeg" alt="Mr. Cat 7" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_008.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 8">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_008.jpeg" alt="Mr. Cat 8" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_009.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 9">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_009.jpeg" alt="Mr. Cat 9" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_010.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 10">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_010.jpeg" alt="Mr. Cat 10" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_011.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 11">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_011.jpeg" alt="Mr. Cat 11" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_012.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 12">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_012.jpeg" alt="Mr. Cat 12" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_013.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 13">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_013.jpeg" alt="Mr. Cat 13" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_014.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 14">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_014.jpeg" alt="Mr. Cat 14" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_015.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 15">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_015.jpeg" alt="Mr. Cat 15" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_016.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 16">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_016.jpeg" alt="Mr. Cat 16" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_017.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 17">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_017.jpeg" alt="Mr. Cat 17" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_018.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 18">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_018.jpeg" alt="Mr. Cat 18" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Cat/Cat_019.jpeg" data-lightbox="mr-cat" data-title="Mr. Cat 19">
+                        <img src="images/gallery/JMOSN-HAT/Cat/Cat_019.jpeg" alt="Mr. Cat 19" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Mr. Crow Gallery Section -->
+        <section class="gallery-section">
+            <h2 class="mb-4">Mr. Crow Concept Art</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Crow/Cro_001.jpeg" data-lightbox="mr-crow" data-title="Mr. Crow 1">
+                        <img src="images/gallery/JMOSN-HAT/Crow/Cro_001.jpeg" alt="Mr. Crow 1" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Crow/Cro_002.jpeg" data-lightbox="mr-crow" data-title="Mr. Crow 2">
+                        <img src="images/gallery/JMOSN-HAT/Crow/Cro_002.jpeg" alt="Mr. Crow 2" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Crow/Cro_003.jpeg" data-lightbox="mr-crow" data-title="Mr. Crow 3">
+                        <img src="images/gallery/JMOSN-HAT/Crow/Cro_003.jpeg" alt="Mr. Crow 3" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Crow/Cro_004.jpeg" data-lightbox="mr-crow" data-title="Mr. Crow 4">
+                        <img src="images/gallery/JMOSN-HAT/Crow/Cro_004.jpeg" alt="Mr. Crow 4" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Crow/Cro_005.jpeg" data-lightbox="mr-crow" data-title="Mr. Crow 5">
+                        <img src="images/gallery/JMOSN-HAT/Crow/Cro_005.jpeg" alt="Mr. Crow 5" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Crow/Cro_006.jpeg" data-lightbox="mr-crow" data-title="Mr. Crow 6">
+                        <img src="images/gallery/JMOSN-HAT/Crow/Cro_006.jpeg" alt="Mr. Crow 6" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Crow/Cro_007.jpeg" data-lightbox="mr-crow" data-title="Mr. Crow 7">
+                        <img src="images/gallery/JMOSN-HAT/Crow/Cro_007.jpeg" alt="Mr. Crow 7" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Crow/Cro_008.jpeg" data-lightbox="mr-crow" data-title="Mr. Crow 8">
+                        <img src="images/gallery/JMOSN-HAT/Crow/Cro_008.jpeg" alt="Mr. Crow 8" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Crow/Cro_009.jpeg" data-lightbox="mr-crow" data-title="Mr. Crow 9">
+                        <img src="images/gallery/JMOSN-HAT/Crow/Cro_009.jpeg" alt="Mr. Crow 9" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Crow/Cro_010.jpeg" data-lightbox="mr-crow" data-title="Mr. Crow 10">
+                        <img src="images/gallery/JMOSN-HAT/Crow/Cro_010.jpeg" alt="Mr. Crow 10" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Crow/Cro_011.jpeg" data-lightbox="mr-crow" data-title="Mr. Crow 11">
+                        <img src="images/gallery/JMOSN-HAT/Crow/Cro_011.jpeg" alt="Mr. Crow 11" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="images/gallery/JMOSN-HAT/Crow/Cro_012.jpeg" data-lightbox="mr-crow" data-title="Mr. Crow 12">
+                        <img src="images/gallery/JMOSN-HAT/Crow/Cro_012.jpeg" alt="Mr. Crow 12" class="img-fluid" width="400" height="300">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (you can include this from your components/footer.html) -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Juliette's Miracle on St. Nick. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy-policy.html" class="text-light me-3">Privacy Policy</a>
+                    <a href="terms-of-use.html" class="text-light">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+    <script src="path/to/lightbox2.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 100
+        });
+    </script>
+</body>
+
+</html>
